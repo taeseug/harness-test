@@ -188,8 +188,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "c24def93ddfcd179",
+  "active": "27fd34a450639c66",
   "lastOpenFiles": [
+    "obsidian-vault/validation_report.json",
+    "docs/guides/WIKI_VALIDATION_GUIDE.md",
+    "scripts/validate-wiki.py",
     "obsidian-vault/Actions/ACTION_ITEMS.md",
     "obsidian-vault/Actions",
     "llm-ssot/WIKI/TOPICS.md",
@@ -218,13 +221,10 @@
     "vault_backup_20260810_141344/Meetings/2026-07-09-제품주간회의.enhanced.md",
     "vault_backup_20260810_141344/Meetings/2026-06-25-온보딩개선회의.enhanced.md",
     "vault_backup_20260810_141344/Meetings/2026-06-11-제품주간회의.enhanced.md",
-    "vault_backup_20260810_141344/Meetings/2026-05-14-제품주간회의.enhanced.md",
-    "vault_backup_20260810_141344/Meetings/2026-04-16-제품주간회의.enhanced.md",
     "vault_backup_20260810_141344/Meetings",
     "vault_backup_20260810_141344/Templates",
     "vault_backup_20260810_141344/SSOT",
     "vault_backup_20260810_141344/Decisions",
-    "vault_backup_20260810_141344/Daily",
-    "vault_backup_20260810_141344"
+    "vault_backup_20260810_141344/Daily"
   ]
 }
