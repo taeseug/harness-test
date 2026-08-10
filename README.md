@@ -114,6 +114,23 @@ Claude Code에서:
 - Markdown 검증
 - 3가지 자동 파이프라인
 
+### 🚀 PR을 자동으로 생성하고 싶다면
+**→ [PR_CREATOR_GUIDE.md](docs/guides/PR_CREATOR_GUIDE.md) + `scripts/create-pr.py`**
+```bash
+# 대화형 모드 (추천)
+python3 scripts/create-pr.py --interactive
+
+# 미리보기
+python3 scripts/create-pr.py --dry-run
+
+# 자동 생성
+python3 scripts/create-pr.py
+```
+- 커밋 자동 분석
+- PR 제목 & 설명 자동 생성
+- GitHub PR 자동 생성
+- 6가지 모드 지원
+
 ---
 
 ## 📁 폴더 구조
