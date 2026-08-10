@@ -44,10 +44,12 @@ JSON 저장 + ACTION_ITEMS.md 갱신
 
 ```
 1. analysis_YYYYMMDD_HHMMSS.json
-   └─ 요약, 액션, 결정, SSOT 영향
+   └─ 위치: obsidian-vault/Meetings/
+   └─ 내용: 요약, 액션, 결정, SSOT 영향
 
 2. ACTION_ITEMS.md 갱신
-   └─ 새로운 액션 아이템 자동 추가
+   └─ 위치: obsidian-vault/Actions/
+   └─ 내용: 새로운 액션 아이템 자동 추가
 ```
 
 ---

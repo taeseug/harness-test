@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "llm-ssot/WIKI/TIMELINE.md",
+                "file": "llm-ssot/DASHBOARD.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TIMELINE"
+              "title": "DASHBOARD"
             }
           }
         ]
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "llm-ssot/WIKI/TIMELINE.md",
+                "file": "llm-ssot/DASHBOARD.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "llm-ssot/WIKI/TIMELINE.md",
+                "file": "llm-ssot/DASHBOARD.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "llm-ssot/WIKI/TIMELINE.md",
+                "file": "llm-ssot/DASHBOARD.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -190,41 +190,41 @@
   },
   "active": "c24def93ddfcd179",
   "lastOpenFiles": [
-    "scripts/migrate-docs.sh",
-    "scripts/meeting-processor.py",
-    "scripts/migrate-docs-advanced.py",
-    "docs/handover/SESSION_3_SUMMARY.md",
-    "docs/references/FIRST_MEETING_TEST.md",
-    "docs/references/ANALYSIS_RAW_vs_ENHANCED.md",
-    "docs/references/TROUBLESHOOTING.md",
-    "docs/references/SUCCESS_CRITERIA.md",
-    "docs/guides/PHASE3_EXECUTION_GUIDE.md",
-    "docs/guides/SETUP_CHECKLIST.md",
-    "docs/guides/OBSIDIAN_SETUP_GUIDE.html",
-    "scripts",
-    "docs/references",
-    "docs/handover",
-    "docs/guides",
-    "docs",
-    "OBSIDIAN_SETUP_GUIDE.html",
-    "obsidian-vault/Templates/daily.md",
-    "obsidian-vault/Templates/meeting-new.md",
-    "handover/SESSION_3_SUMMARY.md",
-    "SUCCESS_CRITERIA.md",
-    "TROUBLESHOOTING.md",
-    "PHASE3_EXECUTION_GUIDE.md",
-    "meeting-processor.py",
-    "SETUP_CHECKLIST.md",
-    "llm-ssot/WIKI/PEOPLE.md",
+    "obsidian-vault/Actions/ACTION_ITEMS.md",
+    "obsidian-vault/Actions",
+    "llm-ssot/WIKI/TOPICS.md",
     "llm-ssot/WIKI/DECISIONS.md",
+    "llm-ssot/WIKI/TIMELINE.md",
     "llm-ssot/WIKI/DASHBOARD.md",
-    "WIKI/MEETINGS_HISTORY/INDEX.md",
-    "WIKI/MEETINGS_HISTORY/2026-07-23_vs_07-09.md",
-    "WIKI/MEETINGS_HISTORY/2026-07-09_vs_06-25.md",
-    "WIKI/MEETINGS_HISTORY/2026-06-25_vs_06-11.md",
-    "WIKI/MEETINGS_HISTORY/2026-06-11_vs_05-14.md",
-    "WIKI_2026-05-14_with_comparison.md",
-    "ANALYSIS_RAW_vs_ENHANCED.md",
-    "README.md"
+    "llm-ssot/WIKI/PEOPLE.md",
+    "docs/guides/OBSIDIAN_MEETING_ANALYZER_GUIDE.md",
+    "obsidian-vault/Meetings/analysis_20260811_143000.json",
+    "docs/handover/SESSION_4_SUMMARY.md",
+    "scripts/batch-analyze-meetings.sh",
+    "handover/RULES_AND_GUIDELINES.md",
+    "docs/guides/PRE_FIRST_MEETING_CHECKLIST.md",
+    "docs/references/SYSTEM_ARCHITECTURE.md",
+    "docs/references/FINAL_VALIDATION.md",
+    "docs/guides/CLAUDE_API_RUN.md",
+    "docs/guides/CLAUDE_API_SETUP.md",
+    "obsidian-vault/QUERIES.md",
+    "CLAUDE.md",
+    "vault_backup_20260810_141344/Weekly",
+    "vault_backup_20260810_141344/PLUGINS_SETUP.md",
+    "vault_backup_20260810_141344/Meetings/_meeting-template.enhanced.md",
+    "vault_backup_20260810_141344/Meetings/MEETINGS_ANALYSIS.md",
+    "vault_backup_20260810_141344/Meetings/ACTION_ITEMS.md",
+    "vault_backup_20260810_141344/Meetings/2026-07-23-제품주간회의.enhanced.md",
+    "vault_backup_20260810_141344/Meetings/2026-07-09-제품주간회의.enhanced.md",
+    "vault_backup_20260810_141344/Meetings/2026-06-25-온보딩개선회의.enhanced.md",
+    "vault_backup_20260810_141344/Meetings/2026-06-11-제품주간회의.enhanced.md",
+    "vault_backup_20260810_141344/Meetings/2026-05-14-제품주간회의.enhanced.md",
+    "vault_backup_20260810_141344/Meetings/2026-04-16-제품주간회의.enhanced.md",
+    "vault_backup_20260810_141344/Meetings",
+    "vault_backup_20260810_141344/Templates",
+    "vault_backup_20260810_141344/SSOT",
+    "vault_backup_20260810_141344/Decisions",
+    "vault_backup_20260810_141344/Daily",
+    "vault_backup_20260810_141344"
   ]
 }

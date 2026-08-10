@@ -33,8 +33,9 @@ class Colors:
     BOLD = '\033[1m'
 
 # 설정
-DEFAULT_MODEL = "claude-3-5-sonnet-20241022"
+DEFAULT_MODEL = "claude-3-haiku-20241022"
 MEETINGS_FOLDER = "Meetings"
+ACTION_ITEMS_FOLDER = "Actions"  # 새로운 위치
 ACTION_ITEMS_FILE = "ACTION_ITEMS.md"
 
 class MeetingProcessor:
@@ -197,7 +198,7 @@ JSON 형식으로 정확히 반환하세요. Markdown 포장 없이 순수 JSON�
 
     def update_action_items(self) -> None:
         """ACTION_ITEMS.md 자동 갱신"""
-        action_items_file = self.vault_root / MEETINGS_FOLDER / ACTION_ITEMS_FILE
+        action_items_file = self.vault_root / ACTION_ITEMS_FOLDER / ACTION_ITEMS_FILE
 
         if not action_items_file.exists():
             self.log(f"⚠️ {ACTION_ITEMS_FILE} 찾을 수 없음: {action_items_file}", Colors.YELLOW)

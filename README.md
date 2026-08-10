@@ -93,6 +93,8 @@ python3 scripts/meeting-processor.py ./obsidian-vault/Meetings/2026-05-14-제품
 │   ├── .obsidian/                       # Obsidian 설정
 │   ├── SSOT/                            # 단일 정보 원칙 문서
 │   ├── Meetings/                        # 회의 기록
+│   ├── Actions/                         # 액션 아이템 추적 ✨ NEW
+│   │   └── ACTION_ITEMS.md              # 모든 액션 아이템 통합 관리
 │   ├── Decisions/                       # 의사결정 사항
 │   ├── Daily/                           # 일일 노트
 │   ├── Weekly/                          # 주간 노트
