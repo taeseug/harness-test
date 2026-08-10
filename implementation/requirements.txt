@@ -1,0 +1,34 @@
+# LLM SSOT Harness - 의존성
+
+# 핵심
+python>=3.8
+
+# CLI
+click>=8.0.0          # 고급 CLI 프레임워크 (Phase 2에서 사용)
+argparse              # 기본 라이브러리
+
+# 파일 처리
+pyyaml>=5.4           # YAML 설정 파일
+markdown>=3.4         # 마크다운 처리
+
+# 데이터 처리
+python-dateutil>=2.8  # 날짜 처리
+pytz>=2021.3          # 타임존 처리
+
+# 알림 (Phase 2)
+slack-sdk>=3.0        # Slack 통합
+requests>=2.25        # HTTP 요청
+
+# 테스트 (Phase 4)
+pytest>=6.0
+pytest-cov>=2.12
+mock>=4.0
+
+# 개발 도구
+black>=21.0           # 코드 포맷팅
+flake8>=3.9           # Linter
+mypy>=0.910           # 타입 체크
+
+# 선택 사항
+colorama>=0.4.4       # 터미널 색상
+tabulate>=0.8         # 테이블 출력

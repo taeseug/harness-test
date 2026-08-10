@@ -1,0 +1,514 @@
+# Meeting Automation Harness Configuration
+# 회의 자동화 하네스 설정
+
+name: "LLM SSOT Meeting Harness"
+version: "1.0.0"
+created_date: "2026-08-10"
+
+---
+
+# 🎯 핵심 설정
+core:
+  # 회의 파일 패턴
+  meeting_pattern: "YYYY-MM-DD_*.md"
+  storage_path: "./Meetings"
+
+  # 자동화 활성화
+  auto_process: true
+  auto_slack_notify: true
+  auto_ssot_update: true
+
+  # 마감일 추적
+  deadline_tracking: true
+  reminder_days_before: 3
+
+---
+
+# 📋 Phase 1: Pre-Meeting (사전 준비)
+pre_meeting:
+  enabled: true
+
+  # 아젠다 자동 생성
+  agenda_generation:
+    enabled: true
+    use_previous_meeting: true
+    fetch_related_ssot: true
+    max_agenda_items: 5
+
+  # 배경 자료 수집
+  background_collection:
+    enabled: true
+    sources:
+      - "related_ssot_docs"      # SSOT 문서 링크
+      - "previous_meeting_notes"  # 이전 회의록
+      - "pending_adrs"            # 검토 대기 중인 ADR
+      - "related_action_items"    # 관련 액션 아이템
+
+  # Slack 알림
+  slack_notification:
+    enabled: true
+    template: "meeting_announcement"
+    channels: ["#ssot", "#team-general"]
+    include_agenda: true
+    include_background: true
+    include_meeting_link: true
+
+---
+
+# 📝 Phase 2: During-Meeting (회의 중)
+during_meeting:
+  enabled: true
+
+  # 템플릿 검증
+  template_validation:
+    enabled: true
+    check_structure: true
+    check_date_format: true
+    check_required_fields: true
+
+  # 필수 필드 (회의 중 작성)
+  required_fields:
+    - date
+    - participants
+    - facilitator
+    - scribe
+    - topic
+    - discussion_items
+
+  # 권장 필드
+  recommended_fields:
+    - agenda
+    - background
+    - decisions
+    - action_items
+    - ssot_impact
+
+  # 형식 검증 규칙
+  format_rules:
+    # 날짜 형식
+    date_format: "YYYY-MM-DD"
+    time_format: "HH:MM"
+
+    # 참석자 형식 ([이름] 사용)
+    participant_format: "[이름]"
+
+    # 액션 아이템 형식
+    action_item_format: "[ ] **[담당자]** - [작업] - 마감: YYYY-MM-DD"
+
+    # 결정 형식
+    decision_format: "✅ 결정: [정확한 내용]"
+
+---
+
+# ✅ Phase 3: Post-Meeting (회의 후 자동 처리)
+post_meeting:
+  enabled: true
+
+  # 자동 실행 순서
+  pipeline:
+    - step: 1
+      name: "Parse Meeting File"
+      description: "회의록 파일 파싱"
+
+    - step: 2
+      name: "Generate Summary"
+      description: "회의 요약 생성 (핵심 결정 3-5개)"
+      enabled: true
+
+    - step: 3
+      name: "Extract Action Items"
+      description: "액션 아이템 추출 및 정규화"
+      enabled: true
+      output: "ACTION_ITEMS.md"
+
+    - step: 4
+      name: "Analyze SSOT Impact"
+      description: "SSOT 영향 분석 및 분류"
+      enabled: true
+
+    - step: 5
+      name: "Generate ADR"
+      description: "Type B/A 결정에 대해 ADR 초안 생성"
+      enabled: true
+      output: "Decisions/ADR-NNN.md"
+      adr_threshold: "Type B"  # Type B 이상만 자동 생성
+
+    - step: 6
+      name: "Update SSOT"
+      description: "SSOT.md에 링크 및 액션 아이템 추가"
+      enabled: true
+      sections_to_update:
+        - "최근 회의록"
+        - "진행 중 Action Items"
+        - "변경 이력"
+
+    - step: 7
+      name: "Send Notifications"
+      description: "팀 알림 (Slack, Email 등)"
+      enabled: true
+
+---
+
+# 📊 Action Items 추적 설정
+action_items:
+  enabled: true
+
+  # 저장 위치
+  storage_file: "ACTION_ITEMS.md"
+
+  # 우선순위 분류
+  priority_levels:
+    urgent:
+      label: "🔴 긴급"
+      days: 3
+
+    normal:
+      label: "🟡 일반"
+      days: 14
+
+    backlog:
+      label: "🟢 백로그"
+      days: null  # 무기한
+
+  # 상태 추적
+  statuses:
+    - pending: "⏳ 진행 대기"
+    - in_progress: "🔄 진행 중"
+    - completed: "✅ 완료"
+    - blocked: "🚫 막힘"
+    - cancelled: "❌ 취소"
+
+  # 자동 리마인더
+  reminders:
+    enabled: true
+    days_before: 3
+    channels: ["slack", "email"]  # 알림 채널
+    message_template: "action_item_reminder"
+
+  # 자동 완료 감지
+  auto_completion_detection:
+    enabled: true
+    keywords: ["완료", "done", "completed", "finished"]
+
+---
+
+# 📌 ADR 생성 설정
+adr_generation:
+  enabled: true
+
+  # ADR을 자동 생성할 변경 유형
+  auto_generate_for:
+    - "Type A"  # 긴급 (보안, 장애)
+    - "Type B"  # 일반 (정책, 기준 변경)
+
+  skip_for:
+    - "Type C"  # 경미 (문서 정정, 예제)
+
+  # ADR 파일 위치
+  adr_storage_path: "./Decisions"
+  adr_naming: "ADR-NNN-[kebab-case-title].md"
+
+  # ADR 섹션 자동 생성
+  adr_sections:
+    - "Title"
+    - "Status"
+    - "Context"
+    - "Decision"
+    - "Rationale"
+    - "Consequences"
+    - "Alternatives"
+    - "Meeting Reference"
+
+  # 변경 유형별 분류 규칙
+  classification_rules:
+    Type_A:
+      keywords:
+        - "보안"
+        - "보안 이슈"
+        - "critical"
+        - "긴급"
+      urgency: "24h"
+
+    Type_B:
+      keywords:
+        - "정책"
+        - "기준"
+        - "규칙"
+        - "패턴"
+      urgency: "1-2w"
+
+    Type_C:
+      keywords:
+        - "예제"
+        - "문서"
+        - "오타"
+        - "수정"
+      urgency: "immediate"
+
+---
+
+# 🔗 SSOT 업데이트 설정
+ssot_update:
+  enabled: true
+
+  # SSOT 파일 위치
+  ssot_file: "./SSOT.md"
+
+  # 자동 업데이트할 섹션
+  sections_to_update:
+    - name: "최근 회의록"
+      template: "recent_meetings"
+      max_entries: 10
+
+    - name: "진행 중 Action Items"
+      template: "active_action_items"
+      show_status: true
+      show_deadline: true
+
+    - name: "변경 이력"
+      template: "change_log"
+      include_type: true
+      include_date: true
+
+  # 링크 형식
+  link_format: "[[Meetings/YYYY-MM-DD_*.md]]"
+  auto_link_related_docs: true
+
+  # 업데이트 전 검증
+  validation:
+    check_file_exists: true
+    check_links_valid: true
+    auto_fix_broken_links: true
+
+---
+
+# 📞 Slack 통합
+slack:
+  enabled: true
+
+  # 알림 설정
+  notifications:
+    meeting_created:
+      enabled: true
+      channel: "#ssot"
+      template: "meeting_created"
+
+    meeting_completed:
+      enabled: true
+      channel: "#ssot"
+      template: "meeting_completed_summary"
+      include_decisions: true
+      include_action_items: true
+
+    action_item_reminder:
+      enabled: true
+      channel: "direct"  # 담당자에게 DM
+      days_before: 3
+
+    adr_created:
+      enabled: true
+      channel: "#ssot-decisions"
+      template: "adr_draft_created"
+
+    ssot_updated:
+      enabled: true
+      channel: "#ssot"
+      template: "ssot_updated"
+
+  # 봇 설정
+  bot:
+    name: "SSOT Meeting Bot"
+    icon: "📅"
+    handle_reactions: true  # ✅, 📌 등의 이모지 반응 감지
+
+---
+
+# 📅 캘린더 동기화
+calendar_sync:
+  enabled: false  # 필요시 활성화
+
+  # Google Calendar, Outlook 등
+  providers:
+    - google_calendar
+    - outlook
+
+  # 자동 생성 이벤트
+  auto_create_events: true
+
+  # 미리 알림
+  reminders:
+    - "24h"
+    - "1h"
+
+---
+
+# 🔐 권한 설정
+permissions:
+  # 회의 생성 권한
+  create_meeting:
+    roles: ["facilitator", "team_lead", "owner"]
+
+  # 회의록 편집 권한
+  edit_meeting:
+    roles: ["scribe", "facilitator", "owner"]
+
+  # SSOT 업데이트 권한
+  update_ssot:
+    roles: ["owner", "tech_lead"]  # 자동 업데이트만 가능
+
+  # ADR 생성 권한
+  create_adr:
+    roles: ["owner", "tech_lead"]
+
+  # 액션 아이템 할당 권한
+  assign_action_item:
+    roles: ["facilitator", "owner"]
+
+---
+
+# 🎨 템플릿 설정
+templates:
+  # 회의 템플릿
+  meeting_template: "_meeting-template.enhanced.md"
+
+  # 아젠다 템플릿
+  agenda_template: "_agenda-from-previous.md"
+
+  # ADR 템플릿
+  adr_template: "_decision-template.md"
+
+  # 알림 템플릿들
+  slack_templates:
+    meeting_created: |
+      📅 **새로운 회의가 예약되었습니다**
+      주제: {topic}
+      날짜: {date} {time}
+      의장: {facilitator}
+      아젠다: {agenda_link}
+
+    meeting_completed_summary: |
+      ✅ **회의가 완료되었습니다**
+      주제: {topic}
+      핵심 결정: {decisions}
+      액션 아이템: {action_items_count}개
+      회의록: {meeting_link}
+
+    adr_draft_created: |
+      📌 **ADR 초안이 생성되었습니다** (검토 대기)
+      제목: {adr_title}
+      우선순위: {priority}
+      검토자: {reviewers}
+      링크: {adr_link}
+
+---
+
+# 🔄 스케줄 설정
+scheduling:
+  # 월간 SSOT 리뷰
+  monthly_review:
+    enabled: true
+    day_of_month: 1  # 매월 1일
+    time: "10:00"
+    duration_minutes: 60
+
+  # 분기별 감사
+  quarterly_audit:
+    enabled: true
+    months: [3, 6, 9, 12]  # 3월, 6월, 9월, 12월
+    day_of_month: 15
+    duration_minutes: 120
+
+---
+
+# 📊 데이터 보고서
+reporting:
+  enabled: true
+
+  # 주간 보고서
+  weekly_report:
+    enabled: true
+    day: "friday"
+    time: "17:00"
+    sections:
+      - "new_meetings_count"
+      - "decisions_made"
+      - "action_items_completed"
+      - "action_items_overdue"
+      - "adr_status"
+
+  # 월간 보고서
+  monthly_report:
+    enabled: true
+    day: 1
+    time: "09:00"
+    sections:
+      - "meeting_statistics"
+      - "decision_trends"
+      - "action_item_health"
+      - "ssot_update_summary"
+      - "team_participation"
+
+---
+
+# ⚙️ 고급 설정
+advanced:
+  # 파일 인코딩
+  file_encoding: "utf-8"
+
+  # 마크다운 검증
+  markdown_validation: true
+
+  # 링크 자동 생성
+  auto_linking: true
+
+  # 타임존
+  timezone: "Asia/Seoul"
+
+  # 로깅
+  logging:
+    enabled: true
+    level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+    file: "logs/harness.log"
+    max_size_mb: 100
+    retention_days: 90
+
+---
+
+# 📝 메시지 & 안내문
+messages:
+  missing_required_field: |
+    ⚠️ 필수 필드가 누락되었습니다:
+    - {field}
+
+    다시 확인 후 입력해주세요.
+
+  validation_error: |
+    ❌ 형식 오류:
+    {error_message}
+
+    [[HARNESS.md#형식-검증]]을 참조하세요.
+
+  processing_success: |
+    ✅ 회의록이 처리되었습니다!
+
+    생성된 항목:
+    {generated_items}
+
+    팀 Slack에 알림을 발송했습니다.
+
+---
+
+# 🚀 활성화 체크리스트
+activation_checklist:
+  - [ ] Slack 통합 API 키 설정
+  - [ ] 저장소 권한 확인
+  - [ ] 템플릿 파일 확인
+  - [ ] 첫 회의 테스트 실행
+  - [ ] 팀에 문서 공지
+  - [ ] 피드백 수집 및 개선
+
+---
+
+# 📞 설정 관련 도움말
+# 문제 발생 시: [[HARNESS.md#-트러블슈팅]]
+# 더 자세히: [[HARNESS.md#-기술-상세]]

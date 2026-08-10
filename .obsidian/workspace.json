@@ -1,0 +1,230 @@
+{
+  "main": {
+    "id": "5cb7ab8523c414ea",
+    "type": "split",
+    "children": [
+      {
+        "id": "e7889df2e895fba6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c24def93ddfcd179",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "llm-ssot/WIKI/DECISIONS.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "DECISIONS"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "752b47c294dea6e5",
+    "type": "split",
+    "children": [
+      {
+        "id": "56b07a000cff3e3d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "27fd34a450639c66",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "248e81e9ada591ee",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "08f43ce3ef7b4097",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d735417f3485dfb2",
+    "type": "split",
+    "children": [
+      {
+        "id": "df5d6fbb51263d42",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0dc67148baffa896",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "llm-ssot/WIKI/DECISIONS.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "b0ac825d77e7263e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "llm-ssot/WIKI/DECISIONS.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "9ea22c17276564c0",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "b3f3217f5c08a575",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "204725a2424463e6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "llm-ssot/WIKI/DECISIONS.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "c24def93ddfcd179",
+  "lastOpenFiles": [
+    "handover/SESSION_2_SUMMARY.md",
+    "llm-ssot/WIKI/DASHBOARD.md",
+    "implementation/00_IMPLEMENTATION_PLAN.md",
+    "llm-ssot/Meetings/_agenda-from-previous.md",
+    "FIRST_MEETING_TEST.md",
+    "obsidian-vault/PLUGINS_SETUP.md",
+    "OBSIDIAN_IMPLEMENTATION.md",
+    "obsidian-vault/Weekly",
+    "obsidian-vault/Templates",
+    "obsidian-vault/SSOT",
+    "obsidian-vault/Meetings",
+    "obsidian-vault/Decisions",
+    "obsidian-vault/Daily",
+    "obsidian-vault",
+    "llm-ssot/WIKI/WIKI_INDEX.md",
+    "llm-ssot/WIKI/TOPICS.md",
+    "llm-ssot/WIKI/TIMELINE.md",
+    "llm-ssot/WIKI/PEOPLE.md",
+    "llm-ssot/WIKI/DECISIONS.md",
+    "llm-ssot/WIKI",
+    "llm-ssot/Meetings/TIMELINE.md",
+    "llm-ssot/Meetings/DASHBOARD.md",
+    "llm-ssot/Meetings/PEOPLE.md",
+    "llm-ssot/Meetings/TOPICS.md",
+    "llm-ssot/Meetings/DECISIONS.md",
+    "llm-ssot/Meetings/WIKI_INDEX.md",
+    "llm-ssot/Meetings/2026-07-23-제품주간회의.enhanced.md",
+    "llm-ssot/Meetings/2026-07-09-제품주간회의.enhanced.md",
+    "llm-ssot/Meetings/2026-06-25-온보딩개선회의.enhanced.md",
+    "llm-ssot/Meetings/2026-06-11-제품주간회의.enhanced.md",
+    "llm-ssot/Meetings/2026-05-14-제품주간회의.enhanced.md",
+    "llm-ssot/Meetings/2026-04-16-제품주간회의.enhanced.md",
+    "llm-ssot/Meetings/README.md",
+    "llm-ssot/Meetings/RAW/README.md",
+    "llm-ssot/Meetings/RAW",
+    "llm-ssot/Meetings/2026-06-25-온보딩개선회의.enhanced.md.tmp.56935.0534051e9cf2"
+  ]
+}

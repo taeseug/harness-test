@@ -1,0 +1,59 @@
+{
+  "basePath": "/Users/mac/work/claude/20260810_harness/obsidian-vault",
+  "plugins": {
+    "dataview": {
+      "enabled": true,
+      "settings": {
+        "enableDataviewJs": true,
+        "maxMetadataHeaderLength": 0,
+        "pollingInterval": 2000
+      }
+    },
+    "templater-obsidian": {
+      "enabled": true,
+      "settings": {
+        "templates_folder": "Templates",
+        "trigger_on_file_creation": true
+      }
+    },
+    "breadcrumbs": {
+      "enabled": true,
+      "settings": {
+        "userHierarchyFieldName": "up",
+        "showBreadcrumbs": true
+      }
+    },
+    "calendar": {
+      "enabled": true,
+      "settings": {
+        "showWeeklyNotes": true,
+        "weeklyNoteFormat": "YYYY-[W]WW"
+      }
+    },
+    "checklist-obsidian": {
+      "enabled": true,
+      "settings": {
+        "sortChecklistItems": true
+      }
+    },
+    "periodic-notes": {
+      "enabled": true,
+      "settings": {
+        "daily": {
+          "format": "YYYY-MM-DD",
+          "folder": "Daily"
+        },
+        "weekly": {
+          "format": "YYYY-[W]WW",
+          "folder": "Weekly"
+        },
+        "monthly": {
+          "format": "YYYY-MM",
+          "folder": "Weekly"
+        }
+      }
+    }
+  },
+  "theme": "default",
+  "cssTheme": ""
+}
