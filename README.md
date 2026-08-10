@@ -41,14 +41,14 @@ cd 20260810_harness
 
 ```bash
 # 브라우저에서 열기
-open OBSIDIAN_SETUP_GUIDE.html
+open docs/guides/OBSIDIAN_SETUP_GUIDE.html
 ```
 
 ### 3️⃣ 문서 마이그레이션 (5분)
 
 ```bash
 # 기존 문서를 Obsidian Vault로 복사
-python3 migrate-docs-advanced.py
+python3 scripts/migrate-docs-advanced.py
 ```
 
 ### 4️⃣ Claude API 설정 (2분)
@@ -58,7 +58,7 @@ python3 migrate-docs-advanced.py
 export ANTHROPIC_API_KEY="sk-ant-..."
 
 # 테스트
-python3 meeting-processor.py ./obsidian-vault/Meetings/2026-05-14-제품주간회의.enhanced.md
+python3 scripts/meeting-processor.py ./obsidian-vault/Meetings/2026-05-14-제품주간회의.enhanced.md
 ```
 
 ---
@@ -67,36 +67,41 @@ python3 meeting-processor.py ./obsidian-vault/Meetings/2026-05-14-제품주간�
 
 ```
 20260810_harness/
-├── 🎯 설정 & 가이드
-│   ├── OBSIDIAN_SETUP_GUIDE.html        # 11개 슬라이드 PPT 가이드
-│   ├── SETUP_CHECKLIST.md               # 60개 체크포인트 체크리스트
-│   ├── PHASE3_EXECUTION_GUIDE.md        # 8일 실행 계획
-│   ├── SUCCESS_CRITERIA.md              # 성공 기준 (Tier 1-3)
-│   └── TROUBLESHOOTING.md               # 문제 해결 가이드 (20개 시나리오)
+├── README.md                             # 프로젝트 메인 문서
 │
-├── 🤖 자동화 스크립트
+├── 📚 docs/                              # 모든 문서
+│   ├── guides/                           # 🎯 설정 가이드
+│   │   ├── OBSIDIAN_SETUP_GUIDE.html    # 11개 슬라이드 PPT 가이드
+│   │   ├── SETUP_CHECKLIST.md           # 60개 체크포인트 체크리스트
+│   │   └── PHASE3_EXECUTION_GUIDE.md    # 8일 실행 계획
+│   │
+│   ├── references/                      # 📖 참고 문서
+│   │   ├── SUCCESS_CRITERIA.md          # 성공 기준 (Tier 1-3)
+│   │   ├── TROUBLESHOOTING.md           # 문제 해결 가이드 (20개 시나리오)
+│   │   ├── ANALYSIS_RAW_vs_ENHANCED.md  # RAW vs Enhanced 비교 분석
+│   │   └── FIRST_MEETING_TEST.md        # 첫 회의 테스트 가이드
+│   │
+│   └── handover/                        # 🧭 세션 정리
+│       └── SESSION_3_SUMMARY.md         # 세션 3 완전 정리
+│
+├── 🤖 scripts/                           # 자동화 스크립트
 │   ├── migrate-docs-advanced.py         # 문서 자동 마이그레이션
 │   ├── meeting-processor.py             # Claude API 회의 분석
 │   └── migrate-docs.sh                  # Bash 버전 마이그레이션
 │
-├── 📦 Obsidian Vault
-│   └── obsidian-vault/
-│       ├── .obsidian/                   # Obsidian 설정
-│       ├── SSOT/                        # 단일 정보 원칙 문서
-│       ├── Meetings/                    # 회의 기록
-│       ├── Decisions/                   # 의사결정 사항
-│       ├── Daily/                       # 일일 노트
-│       ├── Weekly/                      # 주간 노트
-│       └── Templates/
-│           ├── meeting-new.md           # 회의록 템플릿
-│           └── daily.md                 # 일일노트 템플릿
+├── 📦 obsidian-vault/                    # Obsidian 메인 시스템
+│   ├── .obsidian/                       # Obsidian 설정
+│   ├── SSOT/                            # 단일 정보 원칙 문서
+│   ├── Meetings/                        # 회의 기록
+│   ├── Decisions/                       # 의사결정 사항
+│   ├── Daily/                           # 일일 노트
+│   ├── Weekly/                          # 주간 노트
+│   └── Templates/
+│       ├── meeting-new.md               # 회의록 템플릿
+│       └── daily.md                     # 일일노트 템플릿
 │
-├── 🧭 핸드오버
-│   └── handover/
-│       └── SESSION_3_SUMMARY.md         # 세션 3 완전 정리
-│
-└── 📊 소스 문서
-    └── llm-ssot/                        # 원본 회의록 & SSOT 문서
+└── 📊 llm-ssot/                          # 원본 데이터
+    └── Meetings/                        # 원본 회의록 & 분석 결과
 ```
 
 ---
@@ -249,7 +254,7 @@ A: `chmod +x migrate-docs-advanced.py` 실행 후 다시 시도.
 
 ### Day 3-4
 ```bash
-python3 migrate-docs-advanced.py
+python3 scripts/migrate-docs-advanced.py
 ```
 
 ### Day 5
@@ -258,7 +263,7 @@ QUERIES.md에서 Dataview 쿼리 설정
 ### Day 6
 ```bash
 export ANTHROPIC_API_KEY="sk-ant-..."
-python3 meeting-processor.py <파일>
+python3 scripts/meeting-processor.py <파일>
 ```
 
 ### Day 7-8
@@ -268,14 +273,15 @@ python3 meeting-processor.py <파일>
 
 ## 📚 상세 가이드
 
-| 가이드 | 내용 |
-|-------|------|
-| **OBSIDIAN_SETUP_GUIDE.html** | 11개 슬라이드 인터랙티브 설정 가이드 |
-| **SETUP_CHECKLIST.md** | 60개 체크포인트로 진행도 추적 |
-| **PHASE3_EXECUTION_GUIDE.md** | 8일 상세 실행 계획 |
-| **SUCCESS_CRITERIA.md** | 성공 판정 기준 (Tier별 점수) |
-| **TROUBLESHOOTING.md** | 20개 문제 & 해결책 |
-| **handover/SESSION_3_SUMMARY.md** | 세션 3 완전 정리 |
+| 가이드 | 위치 | 내용 |
+|-------|------|------|
+| **설정 가이드 PPT** | `docs/guides/OBSIDIAN_SETUP_GUIDE.html` | 11개 슬라이드 인터랙티브 |
+| **체크리스트** | `docs/guides/SETUP_CHECKLIST.md` | 60개 체크포인트 진행도 |
+| **실행 계획** | `docs/guides/PHASE3_EXECUTION_GUIDE.md` | 8일 상세 계획 |
+| **성공 기준** | `docs/references/SUCCESS_CRITERIA.md` | Tier별 점수 판정 |
+| **문제 해결** | `docs/references/TROUBLESHOOTING.md` | 20개 문제 & 해결책 |
+| **분석 리포트** | `docs/references/ANALYSIS_RAW_vs_ENHANCED.md` | 데이터 품질 비교 |
+| **세션 정리** | `docs/handover/SESSION_3_SUMMARY.md` | 완전 정리 문서 |
 
 ---
 
