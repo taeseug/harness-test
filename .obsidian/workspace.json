@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "llm-ssot/WIKI/DASHBOARD.md",
+                "file": "WIKI/MEETINGS_HISTORY/2026-06-11_vs_05-14.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DASHBOARD"
+              "title": "2026-06-11_vs_05-14"
             }
           }
         ]
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "llm-ssot/WIKI/DASHBOARD.md",
+                "file": "WIKI/MEETINGS_HISTORY/2026-06-11_vs_05-14.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "llm-ssot/WIKI/DASHBOARD.md",
+                "file": "WIKI/MEETINGS_HISTORY/2026-06-11_vs_05-14.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "llm-ssot/WIKI/DASHBOARD.md",
+                "file": "WIKI/MEETINGS_HISTORY/2026-06-11_vs_05-14.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -188,8 +188,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "27fd34a450639c66",
+  "active": "c24def93ddfcd179",
   "lastOpenFiles": [
+    "docs/guides/SKILLS_USAGE_GUIDE.md",
+    "llm-ssot/WIKI/WIKI_INDEX.md",
+    "docs/guides/SYSTEM_ARCHITECTURE.md",
+    "llm-ssot/WIKI/DASHBOARD.md",
     "obsidian-vault/Analysis/MEETINGS_HISTORY/INDEX.md",
     "obsidian-vault/Analysis/MEETINGS_HISTORY/2026-07-23_vs_07-09.md",
     "obsidian-vault/Analysis/MEETINGS_HISTORY/2026-07-09_vs_06-25.md",
@@ -201,14 +205,12 @@
     "llm-ssot/WIKI/PEOPLE.md",
     "llm-ssot/WIKI/TIMELINE.md",
     "llm-ssot/WIKI/TOPICS.md",
-    "llm-ssot/WIKI/WIKI_INDEX.md",
     "llm-ssot/DASHBOARD.md",
     "obsidian-vault/validation_report.json",
     "docs/guides/WIKI_VALIDATION_GUIDE.md",
     "scripts/validate-wiki.py",
     "obsidian-vault/Actions/ACTION_ITEMS.md",
     "obsidian-vault/Actions",
-    "llm-ssot/WIKI/DASHBOARD.md",
     "docs/guides/OBSIDIAN_MEETING_ANALYZER_GUIDE.md",
     "obsidian-vault/Meetings/analysis_20260811_143000.json",
     "docs/handover/SESSION_4_SUMMARY.md",
@@ -222,8 +224,6 @@
     "obsidian-vault/QUERIES.md",
     "CLAUDE.md",
     "vault_backup_20260810_141344/Weekly",
-    "vault_backup_20260810_141344/PLUGINS_SETUP.md",
-    "vault_backup_20260810_141344/Meetings/_meeting-template.enhanced.md",
     "vault_backup_20260810_141344/Meetings",
     "vault_backup_20260810_141344/Templates"
   ]
