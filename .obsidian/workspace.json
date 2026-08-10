@@ -190,6 +190,7 @@
   },
   "active": "c24def93ddfcd179",
   "lastOpenFiles": [
+    "docs/guides/COMPLETE_GUIDE.md",
     "docs/guides/SKILLS_USAGE_GUIDE.md",
     "llm-ssot/WIKI/WIKI_INDEX.md",
     "docs/guides/SYSTEM_ARCHITECTURE.md",
@@ -222,7 +223,6 @@
     "docs/guides/CLAUDE_API_RUN.md",
     "docs/guides/CLAUDE_API_SETUP.md",
     "obsidian-vault/QUERIES.md",
-    "CLAUDE.md",
     "vault_backup_20260810_141344/Weekly",
     "vault_backup_20260810_141344/Meetings",
     "vault_backup_20260810_141344/Templates"
