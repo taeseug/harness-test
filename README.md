@@ -93,9 +93,16 @@ python3 scripts/meeting-processor.py ./obsidian-vault/Meetings/2026-05-14-제품
 │   ├── .obsidian/                       # Obsidian 설정
 │   ├── SSOT/                            # 단일 정보 원칙 문서
 │   ├── Meetings/                        # 회의 기록
-│   ├── Actions/                         # 액션 아이템 추적 ✨ NEW
+│   ├── Actions/                         # 액션 아이템 추적
 │   │   └── ACTION_ITEMS.md              # 모든 액션 아이템 통합 관리
 │   ├── Decisions/                       # 의사결정 사항
+│   ├── Analysis/                        # 📊 분석 및 비교 (NEW!)
+│   │   └── MEETINGS_HISTORY/            # 회의 비교 히스토리
+│   │       ├── INDEX.md                 # 6개월 전체 인덱스
+│   │       ├── 2026-06-11_vs_05-14.md   # 외부 의존성 분석
+│   │       ├── 2026-06-25_vs_06-11.md   # A/B 의사결정
+│   │       ├── 2026-07-09_vs_06-25.md   # 에스컬레이션
+│   │       └── 2026-07-23_vs_07-09.md   # 성공 사례
 │   ├── Daily/                           # 일일 노트
 │   ├── Weekly/                          # 주간 노트
 │   └── Templates/
@@ -144,11 +151,26 @@ FROM "Meetings" SORT date DESC
 TABLE status, owner FROM "Decisions"
 ```
 
+### 📊 회의 분석 & 비교
+
+```
+Analysis/MEETINGS_HISTORY/
+├─ INDEX.md          # 6개월 전체 인덱스
+├─ 각 회의별 비교 분석 (5개)
+
+특징:
+✅ 시간대별 패턴 추적
+✅ 문제 진화 과정 분석
+✅ 의사결정 품질 평가
+✅ 팀의 학습 곡선
+```
+
 ### 🔗 링크 기반 네비게이션
 
 - `[[ACTION_ITEMS]]` - 액션 목록으로 이동
 - `[[담당자이름]]` - 담당자 프로필 링크
 - `[[의사결정명]]` - 관련 결정사항 링크
+- `[[MEETINGS_HISTORY]]` - 회의 분석 히스토리로 이동
 
 ---
 
