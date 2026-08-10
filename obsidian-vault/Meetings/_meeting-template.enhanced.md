@@ -1,3 +1,10 @@
+---
+date: YYYY-MM-DD
+type: meeting
+status: ✅
+enhanced_date: YYYY-MM-DD
+---
+
 # 📅 [YYYY-MM-DD] [회의 주제]
 
 **복사 후 사용**:

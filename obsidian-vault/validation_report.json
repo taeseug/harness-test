@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-08-10T16:27:35.381111",
+  "timestamp": "2026-08-10T16:34:02.869185",
   "stats": {
     "total_files": 7,
-    "valid_files": 0,
-    "files_with_issues": 7
+    "valid_files": 6,
+    "files_with_issues": 1
   },
   "results": [
     {
@@ -11,14 +11,13 @@
       "frontmatter": {
         "valid": false,
         "issues": [
-          "Frontmatter가 없음 (시작이 '---'이 아님)"
+          "필드 'date'의 값이 형식에 맞지 않음: YYYY-MM-DD",
+          "필드 'enhanced_date'의 값이 형식에 맞지 않음: YYYY-MM-DD"
         ]
       },
       "schema": {
-        "valid": false,
-        "issues": [
-          "필수 섹션 '액션 아이템' 없음"
-        ]
+        "valid": true,
+        "issues": []
       },
       "filename": {
         "valid": false,
@@ -31,128 +30,104 @@
     {
       "file": "Meetings/2026-04-16-제품주간회의.enhanced.md",
       "frontmatter": {
-        "valid": false,
-        "issues": [
-          "Frontmatter가 없음 (시작이 '---'이 아님)"
-        ]
+        "valid": true,
+        "issues": []
       },
       "schema": {
-        "valid": false,
-        "issues": [
-          "필수 섹션 '액션 아이템' 없음"
-        ]
+        "valid": true,
+        "issues": []
       },
       "filename": {
         "valid": true,
         "issues": []
       },
-      "valid": false
+      "valid": true
     },
     {
       "file": "Meetings/2026-06-25-온보딩개선회의.enhanced.md",
       "frontmatter": {
-        "valid": false,
-        "issues": [
-          "Frontmatter가 없음 (시작이 '---'이 아님)"
-        ]
+        "valid": true,
+        "issues": []
       },
       "schema": {
-        "valid": false,
-        "issues": [
-          "필수 섹션 '액션 아이템' 없음"
-        ]
+        "valid": true,
+        "issues": []
       },
       "filename": {
         "valid": true,
         "issues": []
       },
-      "valid": false
+      "valid": true
     },
     {
       "file": "Meetings/2026-07-09-제품주간회의.enhanced.md",
       "frontmatter": {
-        "valid": false,
-        "issues": [
-          "Frontmatter가 없음 (시작이 '---'이 아님)"
-        ]
+        "valid": true,
+        "issues": []
       },
       "schema": {
-        "valid": false,
-        "issues": [
-          "필수 섹션 '액션 아이템' 없음"
-        ]
+        "valid": true,
+        "issues": []
       },
       "filename": {
         "valid": true,
         "issues": []
       },
-      "valid": false
+      "valid": true
     },
     {
       "file": "Meetings/2026-07-23-제품주간회의.enhanced.md",
       "frontmatter": {
-        "valid": false,
-        "issues": [
-          "Frontmatter가 없음 (시작이 '---'이 아님)"
-        ]
+        "valid": true,
+        "issues": []
       },
       "schema": {
-        "valid": false,
-        "issues": [
-          "필수 섹션 '액션 아이템' 없음"
-        ]
+        "valid": true,
+        "issues": []
       },
       "filename": {
         "valid": true,
         "issues": []
       },
-      "valid": false
+      "valid": true
     },
     {
       "file": "Meetings/2026-06-11-제품주간회의.enhanced.md",
       "frontmatter": {
-        "valid": false,
-        "issues": [
-          "Frontmatter가 없음 (시작이 '---'이 아님)"
-        ]
+        "valid": true,
+        "issues": []
       },
       "schema": {
-        "valid": false,
-        "issues": [
-          "필수 섹션 '액션 아이템' 없음"
-        ]
+        "valid": true,
+        "issues": []
       },
       "filename": {
         "valid": true,
         "issues": []
       },
-      "valid": false
+      "valid": true
     },
     {
       "file": "Meetings/2026-05-14-제품주간회의.enhanced.md",
       "frontmatter": {
-        "valid": false,
-        "issues": [
-          "Frontmatter가 없음 (시작이 '---'이 아님)"
-        ]
+        "valid": true,
+        "issues": []
       },
       "schema": {
-        "valid": false,
-        "issues": [
-          "필수 섹션 '액션 아이템' 없음"
-        ]
+        "valid": true,
+        "issues": []
       },
       "filename": {
         "valid": true,
         "issues": []
       },
-      "valid": false
+      "valid": true
     }
   ],
   "summary": {
     "total": 7,
-    "valid": 0,
-    "invalid": 7,
-    "pass_rate": "0.0%"
+    "valid": 6,
+    "invalid": 1,
+    "pass_rate": "85.7%"
   }
 }
