@@ -1,0 +1,13 @@
+{
+  "migration_date": "2026-08-10T14:13:45.028181",
+  "source": "/Users/mac/work/claude/20260810_harness",
+  "vault": "/Users/mac/work/claude/20260810_harness/obsidian-vault",
+  "stats": {
+    "files_copied": 19,
+    "files_skipped": 0,
+    "links_found": 245,
+    "links_verified": 105,
+    "errors": 0
+  },
+  "version": "1.0"
+}
