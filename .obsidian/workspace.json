@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "llm-ssot/WIKI/DECISIONS.md",
+                "file": "llm-ssot/WIKI/TIMELINE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DECISIONS"
+              "title": "TIMELINE"
             }
           }
         ]
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "llm-ssot/WIKI/DECISIONS.md",
+                "file": "llm-ssot/WIKI/TIMELINE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "llm-ssot/WIKI/DECISIONS.md",
+                "file": "llm-ssot/WIKI/TIMELINE.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "llm-ssot/WIKI/DECISIONS.md",
+                "file": "llm-ssot/WIKI/TIMELINE.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -190,10 +190,22 @@
   },
   "active": "c24def93ddfcd179",
   "lastOpenFiles": [
+    "llm-ssot/WIKI/PEOPLE.md",
+    "llm-ssot/WIKI/DECISIONS.md",
+    "llm-ssot/WIKI/DASHBOARD.md",
+    "WIKI/MEETINGS_HISTORY/INDEX.md",
+    "WIKI/MEETINGS_HISTORY/2026-07-23_vs_07-09.md",
+    "WIKI/MEETINGS_HISTORY/2026-07-09_vs_06-25.md",
+    "WIKI/MEETINGS_HISTORY/2026-06-25_vs_06-11.md",
+    "WIKI/MEETINGS_HISTORY/2026-06-11_vs_05-14.md",
+    "WIKI/MEETINGS_HISTORY",
+    "WIKI",
+    "WIKI_2026-05-14_with_comparison.md",
+    "ANALYSIS_RAW_vs_ENHANCED.md",
+    "README.md",
     "migrate-docs.sh",
     "LOCAL_SETUP_GUIDE.md",
     "handover/SESSION_2_SUMMARY.md",
-    "llm-ssot/WIKI/DASHBOARD.md",
     "implementation/00_IMPLEMENTATION_PLAN.md",
     "llm-ssot/Meetings/_agenda-from-previous.md",
     "FIRST_MEETING_TEST.md",
@@ -209,22 +221,10 @@
     "llm-ssot/WIKI/WIKI_INDEX.md",
     "llm-ssot/WIKI/TOPICS.md",
     "llm-ssot/WIKI/TIMELINE.md",
-    "llm-ssot/WIKI/PEOPLE.md",
-    "llm-ssot/WIKI/DECISIONS.md",
-    "llm-ssot/WIKI",
     "llm-ssot/Meetings/TIMELINE.md",
     "llm-ssot/Meetings/DASHBOARD.md",
     "llm-ssot/Meetings/PEOPLE.md",
     "llm-ssot/Meetings/TOPICS.md",
-    "llm-ssot/Meetings/DECISIONS.md",
-    "llm-ssot/Meetings/WIKI_INDEX.md",
-    "llm-ssot/Meetings/2026-07-23-제품주간회의.enhanced.md",
-    "llm-ssot/Meetings/2026-07-09-제품주간회의.enhanced.md",
-    "llm-ssot/Meetings/2026-06-25-온보딩개선회의.enhanced.md",
-    "llm-ssot/Meetings/2026-06-11-제품주간회의.enhanced.md",
-    "llm-ssot/Meetings/2026-05-14-제품주간회의.enhanced.md",
-    "llm-ssot/Meetings/2026-04-16-제품주간회의.enhanced.md",
-    "llm-ssot/Meetings/RAW",
-    "llm-ssot/Meetings/2026-06-25-온보딩개선회의.enhanced.md.tmp.56935.0534051e9cf2"
+    "llm-ssot/Meetings/DECISIONS.md"
   ]
 }
