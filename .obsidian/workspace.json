@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "WIKI/MEETINGS_HISTORY/2026-06-11_vs_05-14.md",
+                "file": "llm-ssot/WIKI/PEOPLE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-06-11_vs_05-14"
+              "title": "PEOPLE"
             }
           }
         ]
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "WIKI/MEETINGS_HISTORY/2026-06-11_vs_05-14.md",
+                "file": "llm-ssot/WIKI/PEOPLE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "WIKI/MEETINGS_HISTORY/2026-06-11_vs_05-14.md",
+                "file": "llm-ssot/WIKI/PEOPLE.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "WIKI/MEETINGS_HISTORY/2026-06-11_vs_05-14.md",
+                "file": "llm-ssot/WIKI/PEOPLE.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -190,39 +190,39 @@
   },
   "active": "c24def93ddfcd179",
   "lastOpenFiles": [
+    "llm-ssot/WIKI/DECISIONS.md",
+    "llm-ssot/WIKI/DASHBOARD.md",
+    "llm-ssot/SSOT.md",
+    "llm-ssot/README.md",
+    "llm-ssot/QUICK_START.md",
+    "llm-ssot/prompt-engineering.md",
+    "llm-ssot/OBSIDIAN_SETUP.md",
+    "llm-ssot/model-selection.md",
+    "llm-ssot/GOVERNANCE.md",
+    "llm-ssot/DASHBOARD.md",
+    "WIKI/MEETINGS_HISTORY/INDEX.md",
+    "WIKI/MEETINGS_HISTORY/2026-07-23_vs_07-09.md",
+    "WIKI/MEETINGS_HISTORY/2026-07-09_vs_06-25.md",
+    "WIKI/MEETINGS_HISTORY/2026-06-25_vs_06-11.md",
+    "WIKI/MEETINGS_HISTORY/2026-06-11_vs_05-14.md",
+    "work_log.md",
+    "FINAL_VALIDATION_REPORT_20260810.md",
+    "REVALIDATION_SUMMARY_20260810.md",
+    "VALIDATION_SUMMARY_20260810.md",
+    "docs/handover/COMPLETE_SESSION_HANDOVER.md",
+    "docs/handover/SESSION_FINAL_HANDOVER.md",
     "docs/guides/COMPLETE_GUIDE.md",
     "docs/guides/SKILLS_USAGE_GUIDE.md",
     "llm-ssot/WIKI/WIKI_INDEX.md",
     "docs/guides/SYSTEM_ARCHITECTURE.md",
-    "llm-ssot/WIKI/DASHBOARD.md",
     "obsidian-vault/Analysis/MEETINGS_HISTORY/INDEX.md",
-    "obsidian-vault/Analysis/MEETINGS_HISTORY/2026-07-23_vs_07-09.md",
-    "obsidian-vault/Analysis/MEETINGS_HISTORY/2026-07-09_vs_06-25.md",
-    "obsidian-vault/Analysis/MEETINGS_HISTORY/2026-06-25_vs_06-11.md",
-    "obsidian-vault/Analysis/MEETINGS_HISTORY/2026-06-11_vs_05-14.md",
     "obsidian-vault/Analysis/MEETINGS_HISTORY",
     "obsidian-vault/Analysis",
-    "llm-ssot/WIKI/DECISIONS.md",
-    "llm-ssot/WIKI/PEOPLE.md",
-    "llm-ssot/WIKI/TIMELINE.md",
-    "llm-ssot/WIKI/TOPICS.md",
-    "llm-ssot/DASHBOARD.md",
     "obsidian-vault/validation_report.json",
-    "docs/guides/WIKI_VALIDATION_GUIDE.md",
     "scripts/validate-wiki.py",
-    "obsidian-vault/Actions/ACTION_ITEMS.md",
     "obsidian-vault/Actions",
-    "docs/guides/OBSIDIAN_MEETING_ANALYZER_GUIDE.md",
     "obsidian-vault/Meetings/analysis_20260811_143000.json",
-    "docs/handover/SESSION_4_SUMMARY.md",
     "scripts/batch-analyze-meetings.sh",
-    "handover/RULES_AND_GUIDELINES.md",
-    "docs/guides/PRE_FIRST_MEETING_CHECKLIST.md",
-    "docs/references/SYSTEM_ARCHITECTURE.md",
-    "docs/references/FINAL_VALIDATION.md",
-    "docs/guides/CLAUDE_API_RUN.md",
-    "docs/guides/CLAUDE_API_SETUP.md",
-    "obsidian-vault/QUERIES.md",
     "vault_backup_20260810_141344/Weekly",
     "vault_backup_20260810_141344/Meetings",
     "vault_backup_20260810_141344/Templates"
