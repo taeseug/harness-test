@@ -190,6 +190,16 @@
   },
   "active": "c24def93ddfcd179",
   "lastOpenFiles": [
+    "OBSIDIAN_SETUP_GUIDE.html",
+    "obsidian-vault/Templates/daily.md",
+    "obsidian-vault/Templates/meeting-new.md",
+    "handover/SESSION_3_SUMMARY.md",
+    "SUCCESS_CRITERIA.md",
+    "TROUBLESHOOTING.md",
+    "PHASE3_EXECUTION_GUIDE.md",
+    "meeting-processor.py",
+    "migrate-docs-advanced.py",
+    "SETUP_CHECKLIST.md",
     "llm-ssot/WIKI/PEOPLE.md",
     "llm-ssot/WIKI/DECISIONS.md",
     "llm-ssot/WIKI/DASHBOARD.md",
@@ -215,16 +225,6 @@
     "obsidian-vault/Templates",
     "obsidian-vault/SSOT",
     "obsidian-vault/Meetings",
-    "obsidian-vault/Decisions",
-    "obsidian-vault/Daily",
-    "obsidian-vault",
-    "llm-ssot/WIKI/WIKI_INDEX.md",
-    "llm-ssot/WIKI/TOPICS.md",
-    "llm-ssot/WIKI/TIMELINE.md",
-    "llm-ssot/Meetings/TIMELINE.md",
-    "llm-ssot/Meetings/DASHBOARD.md",
-    "llm-ssot/Meetings/PEOPLE.md",
-    "llm-ssot/Meetings/TOPICS.md",
-    "llm-ssot/Meetings/DECISIONS.md"
+    "obsidian-vault/Decisions"
   ]
 }

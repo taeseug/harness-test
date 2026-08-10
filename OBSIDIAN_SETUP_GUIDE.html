@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian 설정 가이드</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #7c3aed;
+            --secondary: #3b82f6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark-bg: #1f2937;
+            --light-bg: #f9fafb;
+            --text-dark: #111827;
+            --text-light: #f3f4f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #111 100%);
+            overflow: hidden;
+            color: var(--text-dark);
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            display: none;
+            width: 95%;
+            max-width: 1200px;
+            height: 90vh;
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideIn 0.5s ease-in-out;
+            overflow-y: auto;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* 슬라이드 유형별 스타일 */
+        .slide.title-slide {
+            background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+            color: white;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .slide.title-slide h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .slide.title-slide p {
+            font-size: 1.8em;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .slide.title-slide .subtitle {
+            font-size: 1.2em;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: var(--primary);
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: var(--secondary);
+            margin: 20px 0 15px 0;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: #555;
+            margin: 15px 0 10px 0;
+        }
+
+        p, li {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        ul, ol {
+            margin-left: 40px;
+            margin-top: 15px;
+        }
+
+        li {
+            margin: 12px 0;
+        }
+
+        /* 강조 박스 */
+        .highlight-box {
+            background: #f0f4ff;
+            border-left: 4px solid var(--primary);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .success-box {
+            background: #ecfdf5;
+            border-left: 4px solid var(--success);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid var(--warning);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .step-box {
+            background: #f8f9ff;
+            border: 2px solid var(--secondary);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        /* 체크리스트 */
+        .checklist {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            margin: 12px 0;
+            font-size: 1.1em;
+        }
+
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--primary);
+            border-radius: 4px;
+            margin-right: 15px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .checkbox.checked {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        /* 테이블 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tr:hover {
+            background: #f9fafb;
+        }
+
+        /* 네비게이션 */
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .nav-button:hover {
+            background: var(--secondary);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .nav-button.prev {
+            left: 20px;
+        }
+
+        .nav-button.next {
+            right: 20px;
+        }
+
+        /* 슬라이드 카운터 및 프로그레스바 */
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: var(--primary);
+            transition: width 0.3s;
+            z-index: 5;
+        }
+
+        /* 2컬럼 레이아웃 */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        /* 아이콘 */
+        .icon {
+            font-size: 2em;
+            margin-right: 10px;
+        }
+
+        /* 반응형 */
+        @media (max-width: 1200px) {
+            .slide {
+                padding: 40px;
+            }
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.5em; }
+            p, li { font-size: 1em; }
+        }
+
+        .tip {
+            background: #e0e7ff;
+            border-left: 4px solid var(--secondary);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-size: 0.95em;
+        }
+
+        .code-block {
+            background: #1f2937;
+            color: #10b981;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .keyboard {
+            display: inline-block;
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-weight: bold;
+            margin: 0 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div class="slideshow-container">
+        <!-- 슬라이드 1: 제목 -->
+        <div class="slide title-slide active">
+            <h1>🎯 Obsidian 설정 완전 가이드</h1>
+            <p>플러그인부터 자동화까지 단계별 설정</p>
+            <div class="subtitle">
+                <p>⏱️ 예상 시간: 30분</p>
+                <p>📋 5가지 단계로 완성하기</p>
+            </div>
+        </div>
+
+        <!-- 슬라이드 2: 개요 -->
+        <div class="slide">
+            <h1>📌 5가지 설정 단계</h1>
+            <div class="step-box" style="margin-top: 30px;">
+                <div style="display: flex; align-items: center; margin: 20px 0;">
+                    <div class="step-number">1</div>
+                    <div><h3>Templater 설정</h3><p>자동 템플릿 생성</p></div>
+                </div>
+            </div>
+            <div class="step-box">
+                <div style="display: flex; align-items: center; margin: 20px 0;">
+                    <div class="step-number">2</div>
+                    <div><h3>Periodic Notes 설정</h3><p>일일 노트 자동화</p></div>
+                </div>
+            </div>
+            <div class="step-box">
+                <div style="display: flex; align-items: center; margin: 20px 0;">
+                    <div class="step-number">3</div>
+                    <div><h3>템플릿 테스트</h3><p>회의록 & 일일노트 생성</p></div>
+                </div>
+            </div>
+            <div class="step-box">
+                <div style="display: flex; align-items: center; margin: 20px 0;">
+                    <div class="step-number">4</div>
+                    <div><h3>링크 자동완성</h3><p>[[참조]] 기능 확인</p></div>
+                </div>
+            </div>
+            <div class="step-box">
+                <div style="display: flex; align-items: center; margin: 20px 0;">
+                    <div class="step-number">5</div>
+                    <div><h3>Dataview 쿼리</h3><p>대시보드 렌더링</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 슬라이드 3: Step 1 - Templater 설정 -->
+        <div class="slide">
+            <h1>⚙️ Step 1: Templater 플러그인 설정</h1>
+
+            <h2>접근 경로</h2>
+            <p><span class="keyboard">Settings (⚙️)</span> → <span class="keyboard">Community Plugins</span> → <span class="keyboard">Templater</span></p>
+
+            <div class="highlight-box" style="margin-top: 20px;">
+                <h3>🔧 확인해야 할 설정</h3>
+                <ul style="margin: 10px 0;">
+                    <li><strong>Template folder location</strong>: <code style="background: #f0f0f0; padding: 2px 6px;">Templates</code></li>
+                    <li><strong>Trigger Templater on new file creation</strong>: <span style="color: var(--success);">✅ ON</span></li>
+                    <li><strong>Automatic jump to cursor</strong>: <span style="color: var(--success);">✅ ON</span></li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <p>⚠️ <strong>주의:</strong> "Templates" 폴더명이 정확해야 합니다 (대소문자 구분)</p>
+            </div>
+
+            <div class="tip">
+                💡 설정 후 <span class="keyboard">저장</span>을 꼭 눌러주세요
+            </div>
+        </div>
+
+        <!-- 슬라이드 4: Step 2 - Periodic Notes 설정 -->
+        <div class="slide">
+            <h1>📅 Step 2: Periodic Notes 설정</h1>
+
+            <h2>접근 경로</h2>
+            <p><span class="keyboard">Settings (⚙️)</span> → <span class="keyboard">Periodic Notes</span></p>
+
+            <div class="highlight-box" style="margin-top: 20px;">
+                <h3>🔧 Daily Notes 섹션 설정</h3>
+                <ul style="margin: 10px 0;">
+                    <li><strong>Enable Daily notes</strong>: <span style="color: var(--success);">✅ ON</span></li>
+                    <li><strong>Daily folder</strong>: <code style="background: #f0f0f0; padding: 2px 6px;">Daily</code></li>
+                    <li><strong>Daily format</strong>: <code style="background: #f0f0f0; padding: 2px 6px;">YYYY-MM-DD</code></li>
+                    <li><strong>Template file</strong>: <code style="background: #f0f0f0; padding: 2px 6px;">Templates/daily</code></li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <p>✅ <strong>결과:</strong> 매일 자동으로 일일노트 생성!</p>
+            </div>
+        </div>
+
+        <!-- 슬라이드 5: Step 3 - 템플릿 테스트 -->
+        <div class="slide">
+            <h1>🧪 Step 3: 템플릿 테스트</h1>
+
+            <h2>3-1. Daily Note 자동 생성 테스트</h2>
+            <div class="step-box">
+                <p><span class="keyboard">Cmd + P</span> (명령팔레트)</p>
+                <p>↓</p>
+                <p><code style="background: #f0f0f0; padding: 2px 6px;">Periodic Notes: Open today note</code> 검색 후 실행</p>
+                <p>↓</p>
+                <p>✅ <strong>Daily</strong> 폴더에 오늘 날짜 파일이 생성됨</p>
+            </div>
+
+            <h2 style="margin-top: 30px;">3-2. 회의 템플릿 생성 테스트</h2>
+            <div class="step-box">
+                <p><span class="keyboard">Cmd + P</span></p>
+                <p>↓</p>
+                <p><code style="background: #f0f0f0; padding: 2px 6px;">Templater: Create new note from template</code> 검색</p>
+                <p>↓</p>
+                <p>📄 <strong>meeting-new</strong> 선택</p>
+                <p>↓</p>
+                <p>✅ <strong>Meetings</strong> 폴더에 파일 생성 & 템플릿 적용</p>
+            </div>
+        </div>
+
+        <!-- 슬라이드 6: Step 4 - 링크 자동완성 -->
+        <div class="slide">
+            <h1>🔗 Step 4: 링크 자동완성 확인</h1>
+
+            <h2>테스트 방법</h2>
+            <div class="step-box">
+                <p><strong>1.</strong> 아무 파일이나 열기</p>
+                <p><strong>2.</strong> <code style="background: #f0f0f0; padding: 2px 6px;">[[</code> 입력하기</p>
+                <p><strong>3.</strong> 자동완성 목록이 나타나는지 확인</p>
+            </div>
+
+            <div class="success-box" style="margin-top: 30px;">
+                <p>✅ <strong>예상 결과:</strong></p>
+                <ul>
+                    <li>[[ACTION_ITEMS]] 자동 완성</li>
+                    <li>[[담당자]] 자동 완성</li>
+                    <li>[[회의]] 자동 완성</li>
+                </ul>
+            </div>
+
+            <div class="tip">
+                💡 <span class="keyboard">Escape</span>를 눌러서 자동완성 목록을 닫을 수 있습니다
+            </div>
+        </div>
+
+        <!-- 슬라이드 7: Step 5 - Dataview 쿼리 -->
+        <div class="slide">
+            <h1>📊 Step 5: Dataview 쿼리 테스트</h1>
+
+            <h2>쿼리 테스트 파일 생성</h2>
+            <p>Obsidian에서 새 파일 <strong>QUERIES_TEST.md</strong> 생성</p>
+
+            <div class="code-block">---
+type: test
+---
+
+# 🔍 Dataview 쿼리 테스트
+
+## 액션 목록
+```dataview
+TASK
+WHERE status = "⏳"
+```
+
+## 회의 목록
+```dataview
+LIST file.name
+FROM "Meetings"
+SORT file.name DESC
+```</div>
+
+            <div class="success-box">
+                <p>✅ 테이블로 렌더링되어야 성공!</p>
+            </div>
+
+            <div class="warning-box">
+                <p>⚠️ 렌더링 안 되면: <span class="keyboard">Cmd + Shift + R</span> (새로고침) 시도</p>
+            </div>
+        </div>
+
+        <!-- 슬라이드 8: 체크리스트 -->
+        <div class="slide">
+            <h1>✅ 최종 체크리스트</h1>
+
+            <div class="checklist">
+                <div class="checklist-item">
+                    <div class="checkbox" id="check1"></div>
+                    <span><strong>Templater 설정</strong> - Templates 폴더 경로 확인</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox" id="check2"></div>
+                    <span><strong>Periodic Notes 설정</strong> - Daily 자동 생성 설정</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox" id="check3"></div>
+                    <span><strong>Daily Note 테스트</strong> - 오늘 날짜 파일 생성됨</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox" id="check4"></div>
+                    <span><strong>회의 템플릿 테스트</strong> - meeting-new 적용 확인</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox" id="check5"></div>
+                    <span><strong>링크 자동완성</strong> - [[ 입력 시 목록 표시</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="checkbox" id="check6"></div>
+                    <span><strong>Dataview 쿼리</strong> - 테이블로 렌더링됨</span>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 40px; text-align: center;">
+                <h3>🎉 모든 체크가 완료되면 성공입니다!</h3>
+            </div>
+        </div>
+
+        <!-- 슬라이드 9: 문제 해결 -->
+        <div class="slide">
+            <h1>🔧 문제 해결</h1>
+
+            <h2>Daily Note가 생성 안 되면</h2>
+            <div class="step-box">
+                <ol>
+                    <li>Periodic Notes 플러그인이 <span style="color: var(--success);">활성화</span>되어 있나?</li>
+                    <li>Daily 폴더가 존재하나? (<code>Obsidian-vault/Daily/</code>)</li>
+                    <li>날짜 형식이 <code>YYYY-MM-DD</code>인가?</li>
+                    <li>Obsidian 재시작 시도</li>
+                </ol>
+            </div>
+
+            <h2>템플릿이 자동 생성 안 되면</h2>
+            <div class="step-box">
+                <ol>
+                    <li>Templater <span style="color: var(--success);">활성화</span> 확인</li>
+                    <li>Templates 폴더에 파일이 있나?</li>
+                    <li><code>meeting-new.md</code> 정확한 이름 확인</li>
+                    <li>Obsidian 재시작 후 재시도</li>
+                </ol>
+            </div>
+
+            <h2>Dataview 쿼리가 렌더링 안 되면</h2>
+            <div class="step-box">
+                <ol>
+                    <li>Dataview 플러그인 활성화 확인</li>
+                    <li><span class="keyboard">Cmd + S</span> 저장</li>
+                    <li><span class="keyboard">Cmd + Shift + R</span> 새로고침</li>
+                    <li>Obsidian 재시작</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- 슬라이드 10: 다음 단계 -->
+        <div class="slide">
+            <h1>🚀 다음 단계</h1>
+
+            <div style="margin-top: 40px;">
+                <h2>✅ Phase 3A 완료 후</h2>
+                <div class="success-box" style="font-size: 1.1em; padding: 20px;">
+                    <p style="margin-bottom: 15px;">🎉 축하합니다! 기본 설정이 완료되었습니다</p>
+                    <p style="margin-bottom: 15px;">다음은 <strong>Phase 3B: 문서 마이그레이션</strong>입니다</p>
+                </div>
+
+                <h2 style="margin-top: 30px;">📋 진행 순서</h2>
+                <ul style="font-size: 1.1em; margin-top: 20px;">
+                    <li><strong>Day 3-4:</strong> migrate-docs-advanced.py 실행</li>
+                    <li><strong>Day 5:</strong> Dataview 쿼리 설정</li>
+                    <li><strong>Day 6:</strong> Claude API 회의 자동화</li>
+                    <li><strong>Day 7:</strong> 최종 검증</li>
+                    <li><strong>Day 8:</strong> 첫 회의 테스트! 🎯</li>
+                </ul>
+
+                <div class="tip" style="margin-top: 30px;">
+                    📚 더 자세한 가이드는 <strong>PHASE3_EXECUTION_GUIDE.md</strong>를 참고하세요
+                </div>
+            </div>
+        </div>
+
+        <!-- 슬라이드 11: 마지막 -->
+        <div class="slide title-slide">
+            <h1>🎊 준비 완료!</h1>
+            <p>Obsidian 설정이 완료되었습니다</p>
+            <div class="subtitle" style="margin-top: 50px;">
+                <p>문제가 생기면:</p>
+                <p>📄 TROUBLESHOOTING.md 를 참고하세요</p>
+                <p style="margin-top: 30px; opacity: 0.8;">2026-08-17 첫 회의에서 만나요! 🚀</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 네비게이션 버튼 -->
+    <button class="nav-button prev" onclick="changeSlide(-1)">❮</button>
+    <button class="nav-button next" onclick="changeSlide(1)">❯</button>
+
+    <!-- 슬라이드 카운터 -->
+    <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">11</span>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[n].classList.add('active');
+            document.getElementById('current-slide').textContent = n + 1;
+
+            // 프로그레스바 업데이트
+            const progress = ((n + 1) / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+
+            // 스크롤 맨 위로
+            slides[n].scrollTop = 0;
+        }
+
+        function changeSlide(delta) {
+            currentSlide = (currentSlide + delta + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // 키보드 네비게이션
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        // 초기 슬라이드 표시
+        showSlide(0);
+
+        // 체크박스 클릭 기능
+        for (let i = 1; i <= 6; i++) {
+            const checkbox = document.getElementById('check' + i);
+            if (checkbox) {
+                checkbox.addEventListener('click', function() {
+                    this.classList.toggle('checked');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
