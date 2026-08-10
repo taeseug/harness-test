@@ -190,6 +190,7 @@
   },
   "active": "c24def93ddfcd179",
   "lastOpenFiles": [
+    "docs/guides/GITHUB_ACTIONS_SETUP.md",
     "llm-ssot/WIKI/DECISIONS.md",
     "llm-ssot/WIKI/DASHBOARD.md",
     "llm-ssot/SSOT.md",
@@ -215,7 +216,6 @@
     "docs/guides/SKILLS_USAGE_GUIDE.md",
     "llm-ssot/WIKI/WIKI_INDEX.md",
     "docs/guides/SYSTEM_ARCHITECTURE.md",
-    "obsidian-vault/Analysis/MEETINGS_HISTORY/INDEX.md",
     "obsidian-vault/Analysis/MEETINGS_HISTORY",
     "obsidian-vault/Analysis",
     "obsidian-vault/validation_report.json",
