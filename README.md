@@ -90,6 +90,17 @@ python3 scripts/meeting-processor.py ./obsidian-vault/Meetings/2026-05-14-제품
 - 검증 항목별 상세 설명
 - 수정 방법 가이드
 
+### 🔄 Wiki 검증 워크플로우를 자동화하고 싶다면
+**→ wiki-validation-orchestrator 스킬 (SKILL_V2)**
+```
+Claude Code에서:
+"Wiki 검증 워크플로우를 시작해줄래?"
+```
+- CLAUDE.md 규칙 적재 후 자동 검증
+- 3단계 자동 실행: SKILL_V2 → validate-wiki.py → wiki-content-reviewer
+- A- 이상 평점까지 자동 반복
+- 최종 리포트 자동 생성
+
 ### 🎬 회의 자동 분석 스킬을 사용하고 싶다면
 **→ [OBSIDIAN_MEETING_ANALYZER_GUIDE.md](docs/guides/OBSIDIAN_MEETING_ANALYZER_GUIDE.md)**
 - 회의 분석 스킬 상세 사용법

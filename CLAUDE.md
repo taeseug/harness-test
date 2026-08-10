@@ -84,6 +84,65 @@ Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>
 - Phase 진행 상황을 README.md에 업데이트
 - 완료 체크리스트는 SUCCESS_CRITERIA.md 참고
 
+### 🔄 Wiki 검증 워크플로우 (필수)
+
+**규칙:**
+- Wiki 파일을 적재한 후 반드시 3단계 검증을 실행해야 함
+- 검증 순서: SKILL_V2 → validate-wiki.py → wiki-content-reviewer
+- 모든 파일이 A- 이상 평점을 받을 때까지 반복
+- 검증 완료 전까지 배포 금지
+
+**사용 방법:**
+```
+기본 검증:
+"Wiki 검증 워크플로우를 시작해줄래?"
+
+특정 파일 검증:
+"2026-08-17 회의 파일을 검증해줄래?"
+
+배치 검증:
+"모든 Wiki 파일을 검증해줄래?"
+```
+
+**3단계 검증 프로세스:**
+```
+Step 1: SKILL_V2 검증 (규칙 확인) → 2분
+├─ CLAUDE.md 규칙 준수
+├─ 파일 구조 일관성
+└─ 커밋 메시지 형식
+
+Step 2: validate-wiki.py (기계 검증) → 1분
+├─ Frontmatter (date, type, status, enhanced_date)
+├─ 스키마 (필수 섹션 3개)
+└─ 파일명 규칙 (YYYY-MM-DD-*.enhanced.md)
+
+Step 3: wiki-content-reviewer (LLM 검증) → 3분
+├─ 일치도 (90점 이상)
+├─ 허구 탐지 (0개)
+├─ 완성도 (90% 이상)
+└─ 액션 정확도 (담당자, 마감일, 상태)
+```
+
+**검증 완료 조건:**
+- ✅ Step 1: 규칙 확인 완료
+- ✅ Step 2: 기계 검증 PASS
+- ✅ Step 3: LLM 검증 A- 이상
+- ✅ 최종 리포트 생성됨
+
+**평점 기준:**
+| 평점 | 점수 | 상태 | 액션 |
+|------|------|------|------|
+| A+ | 95+ | 우수 | ✅ 즉시 배포 |
+| A | 90+ | 양호 | ⚠️ 경미 수정 후 배포 |
+| B | 80+ | 보통 | 🔄 재검토 |
+| C | 70+ | 부족 | ❌ 수정 필요 |
+| F | <70 | 불합격 | ❌ 재작성 |
+
+**문제 해결:**
+1. 기계 검증 실패 → Frontmatter/스키마/파일명 수정
+2. LLM 검증 B 이상 → 피드백 반영 후 재검증
+3. 반복 검증 최대 3회 (초과 시 수동 개입)
+
 ### 🧪 테스트 우선
 
 **규칙:**
@@ -214,6 +273,31 @@ Co-Authored-By: Claude Haiku 4.5 <noreply@anthropic.com>
 
 ❌ 문제 해결 방법 기록 안 함
    대신: TROUBLESHOOTING.md에 추가
+```
+
+### 🚫 Wiki 검증 (필수!)
+
+```
+❌ 검증 없이 Wiki 파일 배포
+   대신: 3단계 검증 필수 (SKILL_V2 → validate-wiki.py → wiki-content-reviewer)
+
+❌ B 등급 이하인 파일 배포
+   대신: A- 이상 평점 받을 때까지 수정
+
+❌ 검증 순서 무시
+   대신: 항상 SKILL_V2 → 기계 검증 → LLM 검증 순서
+
+❌ 기계 검증 FAIL 무시
+   대신: Frontmatter/스키마/파일명 수정 후 재검증
+
+❌ 허구(Hallucination) 있는 파일 배포
+   대신: 0개까지 수정
+
+❌ 검증 완료 전 커밋
+   대신: 모든 검증 통과 후 커밋
+
+❌ 배치 검증 중 부분 실패 무시
+   대신: 모든 파일이 A- 이상될 때까지 반복
 ```
 
 ### 🚫 API & 보안
